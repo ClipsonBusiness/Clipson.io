@@ -3,33 +3,46 @@ import logo from '../assets/images/ClipSon.jpg'
 
 const Header = () => {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-transparent md:bg-transparent backdrop-blur-sm md:backdrop-blur-none">
-      <nav className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 md:py-6">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <div className="flex items-center flex-shrink-0">
-            <img 
-              src={logo} 
-              alt="ClipSon Logo" 
-              className="h-16 sm:h-20 md:h-24 w-16 sm:w-20 md:w-24 rounded-full object-cover"
+    <header className="fixed top-0 left-0 right-0 z-50">
+      <div className="absolute inset-0 bg-[#030b1f]/70 backdrop-blur-2xl border-b border-white/5"></div>
+      <nav className="relative container mx-auto px-4 sm:px-6 lg:px-10 py-4">
+        <div className="flex items-center justify-between gap-6">
+          <a href="#main-content" className="flex items-center gap-4">
+            <img
+              src={logo}
+              alt="ClipSon Logo"
+              className="h-12 w-12 sm:h-14 sm:w-14 rounded-full object-cover border border-white/10 shadow-clipson-glow"
               fetchPriority="high"
-              width="96"
-              height="96"
+              width="56"
+              height="56"
             />
+            <div className="hidden sm:flex flex-col">
+              <span className="text-white font-semibold tracking-wide text-base sm:text-lg leading-tight">
+                ClipSon
+              </span>
+              <span className="text-xs uppercase tracking-[0.2em] text-white/50">
+                Earn from every view
+              </span>
+            </div>
+          </a>
+
+          <div className="hidden md:flex items-center gap-8 text-sm text-white/70">
+            <a href="#how-it-works" className="hover:text-white transition-colors">
+              How it works
+            </a>
+            <a href="#testimonials" className="hover:text-white transition-colors">
+              Community
+            </a>
           </div>
 
-          {/* CTA Buttons */}
-          <div className="flex items-center flex-shrink-0">
-            <a 
-              href="https://app.pink58.com/clipper-login.html" 
-              target="_blank" 
+          <div className="flex items-center gap-3">
+            <a
+              href="https://app.pink58.com/clipper-login.html"
+              target="_blank"
               rel="noopener noreferrer"
-              className="px-4 sm:px-6 py-2 sm:py-2.5 rounded-full bg-green-400 text-gray-900 font-semibold text-sm sm:text-base hover:bg-green-300 transition-all shadow-lg shadow-green-400/30 hover:shadow-green-400/50 focus:outline-none focus:ring-2 focus:ring-green-400/50 inline-block text-center relative overflow-hidden whitespace-nowrap"
-              style={{
-                boxShadow: '0 4px 15px rgba(34, 197, 94, 0.3), 0 0 20px rgba(220, 38, 38, 0.1)',
-              }}
+              className="px-4 sm:px-6 py-2.5 rounded-full bg-clipson-green text-gray-900 font-semibold text-sm sm:text-base hover:bg-clipson-green-light transition-all shadow-clipson-glow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clipson-green/60"
             >
-              <span className="relative z-10">Start Clipping</span>
+              Start Clipping
             </a>
           </div>
         </div>
