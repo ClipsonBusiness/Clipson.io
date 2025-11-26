@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,7 +10,21 @@
   }
   
   body {
-    @apply font-sans antialiased;
+    font-family: 'Sora', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    @apply antialiased;
+    color: #f8fafc;
+    background-color: #030714;
+    background-image:
+      radial-gradient(circle at 20% 20%, rgba(16, 185, 129, 0.2), transparent 35%),
+      radial-gradient(circle at 80% 0%, rgba(56, 189, 248, 0.12), transparent 30%),
+      linear-gradient(180deg, rgba(2, 6, 23, 1) 0%, rgba(3, 7, 18, 1) 45%, rgba(2, 6, 23, 1) 100%);
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+
+  ::selection {
+    background-color: rgba(16, 185, 129, 0.4);
+    color: #f8fafc;
   }
   
   /* Skip to main content for accessibility */
@@ -127,6 +143,38 @@
   100% {
     transform: translateY(-100px) translateX(20px) rotate(360deg);
     opacity: 0;
+  }
+}
+
+@keyframes drift {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-18px) translateX(6px);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.15;
+  }
+  70% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.3);
+    opacity: 0;
+  }
+}
+
+@keyframes glow-orbit {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 
